@@ -1,0 +1,23 @@
+.advantage-control {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.advantage-control-remove-icon {
+  display: flex;
+  align-items: center;
+}
+
+.about-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.about-text {
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+  color: grey;
+}

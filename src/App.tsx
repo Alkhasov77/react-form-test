@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import "./App.css";
+import ProfileForm from "./components/ProfileForm/ProfileForm";
+import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
+
+const router = createBrowserRouter([
+  {
+    index: true,
+    path: "/",
+    element: <ProfileInfo />,
+  },
+  {
+    path: "/form",
+    element: <ProfileForm />,
+  },
+  {
+    path: "*",
+    element: <Navigate replace to="/" />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-page-layout">
+      <div className="main-page-card">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
